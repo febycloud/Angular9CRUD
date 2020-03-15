@@ -1,0 +1,44 @@
+<div class="card">
+  <div class="card-body">
+    <form [formGroup]="angForm" novalidate>
+      <div class="form-group">
+        <label class="col-md-4">Product Name</label>
+        <input type="text" class="form-control" 
+        formControlName="ProductName" 
+          #MemberName/>
+      </div>
+      <div *ngIf="angForm.controls['ProductName'].invalid && (angForm.controls['ProductName'].dirty || angForm.controls['ProductName'].touched)" class="alert alert-danger">
+        <div *ngIf="angForm.controls['ProductName'].errors.required">
+           Name is required.
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="col-md-4">Product Bio </label>
+        <textarea class="form-control" rows = 7 cols = "5"
+        formControlName="ProductBio" 
+        #MemberBio></textarea>
+      </div>
+      <div *ngIf="angForm.controls['ProductBio'].invalid && (angForm.controls['ProductBio'].dirty || angForm.controls['ProductBio'].touched)" class="alert alert-danger">
+        <div *ngIf="angForm.controls['ProductBio'].errors.required">
+           Bio is required.
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="col-md-4">Price</label>
+        <input type="text" class="form-control" 
+        formControlName="Price" 
+        #MemberAge/>
+      </div>
+      <div *ngIf="angForm.controls['Price'].invalid && (angForm.controls['Price'].dirty || angForm.controls['Price'].touched)" class="alert alert-danger">
+        <div *ngIf="angForm.controls['Price'].errors.required">
+          Member Age is required.
+        </div>
+      </div>
+      <div class="form-group">
+        <button type="submit" class="btn btn-primary"
+        [disabled]="angForm.pristine || angForm.invalid"
+        (click) = "addProduct(ProductName.value, ProductBio.value, Price.value)">Create Member</button>
+      </div>
+    </form>
+  </div>
+</div>
