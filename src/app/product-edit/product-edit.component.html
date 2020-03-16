@@ -7,7 +7,7 @@
           <label class="col-md-4">Product Name</label>
           <input type="text" class="form-control" 
           formControlName="ProductName" 
-            #MemberName
+            #ProductName
             [(ngModel)] = "member.ProductName"/>
         </div>
         <div *ngIf="angForm.controls['ProductName'].invalid && (angForm.controls['ProductName'].dirty || angForm.controls['ProductName'].touched)" class="alert alert-danger">
@@ -19,7 +19,7 @@
           <label class="col-md-4">Product Bio </label>
           <textarea class="form-control" rows = 7 cols = "5"
           formControlName="ProductBio" 
-          #MemberBio
+          #ProductBio
           [(ngModel)] = "member.ProductBio"></textarea>
         </div>
         <div *ngIf="angForm.controls['ProductBio'].invalid && (angForm.controls['ProductBio'].dirty || angForm.controls['ProductBio'].touched)" class="alert alert-danger">
@@ -31,7 +31,7 @@
           <label class="col-md-4">Price</label>
           <input type="text" class="form-control" 
           formControlName="Price" 
-          #MemberAge
+          #Price
           [(ngModel)] = "member.Price"/>
         </div>
         <div *ngIf="angForm.controls['Price'].invalid && (angForm.controls['Price'].dirty || angForm.controls['Price'].touched)" class="alert alert-danger">

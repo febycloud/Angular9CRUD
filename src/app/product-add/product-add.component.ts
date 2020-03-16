@@ -12,7 +12,7 @@ export class ProductAddComponent implements OnInit {
 
   angForm:FormGroup;
 
-  constructor(private fb:FormBuilder) { 
+  constructor(private fb: FormBuilder, private ms: ProductService, private router: Router, ) {
     this.createForm();
   }
 
